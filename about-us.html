@@ -19,7 +19,11 @@
             line-height: 1.6;
         }
         .container {
-            width: 90%; max-width: 900px; margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 15px;
+            padding-right: 15px;
         }
         header {
             background: linear-gradient(135deg, var(--color-primary) 0%, #0f0f1b 100%);
@@ -68,13 +72,23 @@
             font-size: 1.2rem; font-weight: 300; margin-bottom: 30px; color: rgba(255,255,255,0.85);
         }
         .about-section {
-            background-color: #11111e; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); padding: 40px 30px; margin-bottom: 40px;
+            background-color: #11111e;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            padding: 40px 30px 40px 30px;
+            margin-bottom: 40px;
+            min-width: 0;
         }
         .about-section h2 {
             color: var(--color-accent); font-size: 2rem; margin-bottom: 15px;
         }
         .about-section p {
-            color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 18px;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            text-align: justify;
+            padding-left: 8px;
+            padding-right: 8px;
         }
         .usp-bar {
             margin-top: 40px; display: flex; justify-content: center; gap: 30px;
@@ -127,7 +141,7 @@
         .footer-bottom { padding: 15px 0; text-align: center; }
         .footer-bottom p { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
         @media (max-width: 768px) {
-            .container { width: 98%; }
+            .container { width: 98%; padding-left: 5px; padding-right: 5px; }
             .usp-bar { flex-direction: column; gap: 10px; }
             .footer-content { flex-direction: column; text-align: center; }
             .footer-column { width: 100%; margin-bottom: 20px; }
@@ -154,7 +168,7 @@
                 text-align: center;
             }
             .nav-links.active {
-                max-height: 300px;
+                max-height: 600px;
                 padding: 20px 0;
             }
         }
