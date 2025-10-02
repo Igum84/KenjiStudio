@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Kenji Studio Developer</title>
+    <style>
+        :root {
+            --color-primary: #1a1a2e;
+            --color-accent: #00bcd4;
+            --color-text-light: #f4f4f4;
+            --color-text-dark: #333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-text-light);
+            background-color: var(--color-primary);
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%; max-width: 900px; margin: 0 auto;
+        }
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #0f0f1b 100%);
+            padding: 40px 0 20px;
+            text-align: center;
+            position: relative;
+        }
+        .brand-logo {
+            display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--color-text-light); margin-bottom: 20px;
+        }
+        .logo-image {
+            height: 32px; margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 2rem; font-weight: 800; color: var(--color-accent);
+        }
+        nav {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .nav-links {
+            list-style: none; display: flex; justify-content: center; gap: 30px;
+        }
+        .nav-links a {
+            color: var(--color-text-light); text-decoration: none; font-weight: 600; transition: color 0.3s, transform 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--color-accent); transform: scale(1.1);
+        }
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--color-accent);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1000;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .main-title {
+            font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; background: linear-gradient(90deg, #fff, var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .subtitle {
+            font-size: 1.2rem; font-weight: 300; margin-bottom: 30px; color: rgba(255,255,255,0.85);
+        }
+        .about-section {
+            background-color: #11111e; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); padding: 40px 30px; margin-bottom: 40px;
+        }
+        .about-section h2 {
+            color: var(--color-accent); font-size: 2rem; margin-bottom: 15px;
+        }
+        .about-section p {
+            color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 18px;
+        }
+        .usp-bar {
+            margin-top: 40px; display: flex; justify-content: center; gap: 30px;
+        }
+        .usp-bar span {
+            background-color: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; color: var(--color-accent); border: 1px solid var(--color-accent); transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+        .usp-bar span:hover {
+            background-color: var(--color-accent); color: var(--color-primary); border-color: #fff; transform: scale(1.08); box-shadow: 0 2px 12px rgba(0,188,212,0.25);
+        }
+        .team-section {
+            margin-top: 40px; text-align: center;
+        }
+        .team-section h3 {
+            color: var(--color-accent); font-size: 1.5rem; margin-bottom: 20px;
+        }
+        .team-grid {
+            display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;
+        }
+        .team-card {
+            background-color: #2c2c4d; border-radius: 10px; padding: 25px 20px; width: 220px; box-shadow: 0 4px 15px rgba(0,0,0,0.18); text-align: center;
+        }
+        .team-card img {
+            width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 2px solid var(--color-accent);
+        }
+        .team-card h4 {
+            color: #fff; font-size: 1.1rem; margin-bottom: 6px;
+        }
+        .team-card p {
+            color: rgba(255,255,255,0.7); font-size: 0.95rem;
+        }
+        footer {
+            padding: 30px 0 0; text-align: center; background-color: #0f0f1b; border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-content {
+            display: flex; justify-content: space-between; text-align: left; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-column { width: 45%; }
+        .footer-column h4 { color: var(--color-accent); font-size: 1.1rem; margin-bottom: 10px; font-weight: 600; }
+        .footer-column p { font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 8px; line-height: 1.4; }
+        .social-icons a { margin-right: 15px; display: inline-block; }
+        .social-icons a i { color: var(--color-text-light); font-size: 1.3rem; transition: color 0.3s, transform 0.3s; }
+        .social-icons a:hover { transform: scale(1.1); }
+        .social-icons a:hover .fa-facebook-f { color: #1877F2; }
+        .social-icons a:hover .fa-youtube { color: #FF0000; }
+        .social-icons a:hover .fa-instagram { color: #C13584; }
+        .social-icons a:hover .fa-twitter { color: #1DA1F2; }
+        .social-icons a:hover .fa-linkedin-in { color: #0A66C2; }
+        .social-icons a:hover .fa-github { color: #6e5494; }
+        .footer-bottom { padding: 15px 0; text-align: center; }
+        .footer-bottom p { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+        @media (max-width: 768px) {
+            .container { width: 98%; }
+            .usp-bar { flex-direction: column; gap: 10px; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-column { width: 100%; margin-bottom: 20px; }
+            .team-grid { flex-direction: column; align-items: center; }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #2c2c4d;
+                max-height: 0;
+                overflow: hidden;
+                padding: 0 0;
+                transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                z-index: 999;
+            }
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .nav-links.active {
+                max-height: 300px;
+                padding: 20px 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand-logo">
+            <img src="logo-kenji.png" alt="Kenji Studio Logo" class="logo-image">
+            <span class="logo-text">Kenji Studio</span>
+        </a>
+        <nav>
+                <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="about-us.html" style="color:var(--color-accent);">About Us</a></li>
+                    <li><a href="#">Our Products</a></li>
+                    <li><a href="#">Customer Services</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+        </nav>
+        <h1 class="main-title">Tentang Kenji Studio Developer</h1>
+        <p class="subtitle">Solusi digital premium, inovasi, dan layanan profesional untuk kebutuhan Anda.</p>
+    </header>
+    <div class="container">
+        <section class="about-section">
+            <h2>Kenji Studio Developer</h2>
+            <p>Kenji Studio Developer adalah tim kreatif yang berfokus pada pengembangan produk digital premium seperti aplikasi VBA, e-book, desain foto, dan layanan video editing. Kami berkomitmen memberikan solusi inovatif, kode bersih, dan hasil yang responsif untuk mendukung efisiensi kerja Anda.</p>
+            <p>Dengan pengalaman lebih dari 5 tahun, kami telah membantu ratusan klien dari berbagai industri untuk meningkatkan produktivitas dan kualitas digital mereka.</p>
+            <div class="usp-bar">
+                <span>⚡ Kode Bersih</span>
+                <span>✨ Responsif Sempurna</span>
+                <span>🔒 Lisensi Seumur Hidup</span>
+            </div>
+        </section>
+        <section class="team-section" id="team">
+            <h3>Our Team</h3>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Kenji">
+                    <h4>Kenji</h4>
+                    <p>Lead Developer & Founder</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ayu">
+                    <h4>Ayu</h4>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rizal">
+                    <h4>Rizal</h4>
+                    <p>Video Editor</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-column contact-info">
+                <h4>Hubungi Kami</h4>
+                <p>Kenji Studio Developer</p>
+                <p>Jl. Inovasi Digital No. 20, <br>Jakarta, Indonesia</p>
+                <p>Email: contact@kenjistudio.dev</p>
+            </div>
+            <div class="footer-column social-links">
+                <h4>Ikuti Kami</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" aria-label="Github"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kenji Studio Developer. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+    <script>
+        // Hamburger Menu Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        menuToggle.innerHTML = '☰';
+                    }
+                });
+            });
+        });
+        // USP bar hover effect already handled by CSS
+    </script>
+</body>
+</html>

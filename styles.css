@@ -1,0 +1,595 @@
+/* Palet Warna Kenji Studio */
+:root {
+    --color-primary: #1a1a2e;       /* Biru gelap (Dasar) */
+    --color-accent: #00bcd4;        /* Cyan cerah (Aksen) */
+    --color-text-light: #f4f4f4;    /* Teks terang */
+    --color-text-dark: #333;        /* Teks gelap */
+}
+
+/* Reset dan Font Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================================
+        NAVBAR & MENU 
+==================================
+*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0; 
+    position: relative; 
+}
+
+/* Gaya brand-logo (Image + Teks) */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text-light);
+}
+
+.logo-image {
+    height: 30px; 
+    margin-right: 10px; 
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-accent);
+}
+
+/* Tombol Hamburger */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--color-accent);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Nav Links (Gaya Desktop) */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 600;
+    /* Transisi untuk warna dan membesar */
+    transition: color 0.3s, transform 0.3s; 
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+    /* Teks membesar 10% saat di-hover */
+    transform: scale(1.1); 
+}
+
+/* ==================================
+        HERO SECTION 
+==================================
+*/
+.hero-section {
+    padding: 60px 0 80px; 
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0f0f1b 100%);
+    text-align: center;
+}
+
+.hero-content {
+    padding-top: 30px; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    /* Efek gradien pada teks */
+    background: linear-gradient(90deg, #ffffff, var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Tombol CTA Utama */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 15px 35px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+    margin-top: 30px; 
+}
+
+.cta-button:hover {
+    background-color: #00e5ff; 
+    transform: translateY(-2px);
+}
+
+/* USP Bar */
+.usp-bar {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.usp-bar span:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border-color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 2px 12px rgba(0, 188, 212, 0.25);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+
+/* ==================================
+        BEST SELLER CAROUSEL 
+==================================
+*/
+.bestseller-carousel-section {
+    margin-top: 20px; 
+    margin-bottom: 0px; 
+}
+
+.bestseller-carousel-section h3 {
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.carousel-item {
+    min-width: 100%; 
+    flex-shrink: 0; 
+    width: 100%; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c2c4d; 
+    padding: 30px;
+    text-align: center;
+}
+
+.carousel-item img {
+    /* Aturan untuk menyamakan ukuran gambar di Desktop */
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.item-info h4 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.item-info p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.carousel-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.carousel-buy-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.carousel-buy-btn:hover {
+    background-color: #00e5ff;
+}
+
+/* Carousel Controls (Panah) */
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    text-align: center;
+    padding: 20px 0 0;
+    position: absolute;
+    bottom: 10px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: var(--color-accent);
+}
+
+
+/* ==================================
+        MAIN CONTENT (PRODUCT SHOWCASE) 
+==================================
+*/
+main {
+    padding: 80px 0;
+    background-color: #11111e; 
+}
+
+.product-showcase {
+    text-align: center;
+}
+
+.product-showcase h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.product-card {
+    background-color: var(--color-primary);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 188, 212, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+}
+
+.product-card h3 {
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.buy-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.buy-link:hover {
+    background-color: #00e5ff;
+}
+
+/* ==================================
+        FOOTER 
+==================================
+*/
+footer {
+    padding: 40px 0 0; 
+    text-align: center;
+    background-color: #0f0f1b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column {
+    width: 45%; 
+}
+
+.footer-column h4 {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-column p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Gaya Ikon Media Sosial */
+.social-icons a {
+    margin-right: 15px;
+    display: inline-block; 
+}
+
+.social-icons a i {
+    color: var(--color-text-light); /* Warna default: Putih */
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+/* Efek Hover: Transform (Scale) diterapkan pada link <a> */
+.social-icons a:hover {
+    transform: scale(1.1); 
+}
+
+/* Efek Hover: Warna Brand (Targetkan ikon <i> di dalam <a>:hover) */
+.social-icons a:hover .fa-facebook-f {
+    color: #1877F2; /* Facebook Blue */
+}
+
+.social-icons a:hover .fa-youtube {
+    color: #FF0000; /* YouTube Red */
+}
+
+.social-icons a:hover .fa-instagram {
+    color: #C13584; /* Instagram Purple */
+}
+
+.social-icons a:hover .fa-twitter {
+    color: #1DA1F2; /* Twitter Blue */
+}
+
+.social-icons a:hover .fa-linkedin-in {
+    color: #0A66C2; /* LinkedIn Blue */
+}
+
+.social-icons a:hover .fa-github {
+    color: #6e5494; /* GitHub Purple/Dark Gray */
+}
+
+
+.footer-bottom {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ==================================
+        RESPONSIVENESS (MOBILE) 
+==================================
+*/
+@media (max-width: 768px) {
+    /* Penyesuaian Konten */
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .usp-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* 🍔 Tampilkan tombol hamburger di mobile */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* 📱 Atur Nav Links untuk tampilan mobile (Menu Slide Down) */
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #2c2c4d; 
+        
+        /* Ganti aturan sembunyi slide vertikal */
+        max-height: 0; 
+        overflow: hidden; 
+        padding: 0 0; 
+        
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; 
+        
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    /* 🚀 Status Aktif: Tampilkan menu dengan slide down */
+    .nav-links.active {
+        max-height: 300px; 
+        padding: 20px 0; 
+    }
+    
+    /* Product Grid di mobile hanya 1 kolom */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Penyesuaian Carousel di Mobile */
+    .bestseller-carousel-section {
+        margin-top: 40px; 
+        margin-bottom: 30px;
+    }
+
+    .bestseller-carousel-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-item {
+        padding: 20px;
+    }
+
+    .carousel-item img {
+        width: 100%; 
+        height: 200px; 
+        object-fit: cover; 
+    }
+    
+    .item-info h4 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-price {
+        font-size: 1.3rem;
+    }
+
+    .carousel-prev, .carousel-next {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+    
+    /* Footer Mobile Adjustments */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .social-links {
+        margin-bottom: 0;
+    }
+    
+    .social-icons {
+        margin-top: 10px;
+    }
+    
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
