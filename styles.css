@@ -370,6 +370,11 @@ main {
     font-weight: 800;
     margin-bottom: 15px;
 }
+.product-image {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: for rounded corners */
+}
 
 .buy-link {
     display: inline-block;
@@ -595,3 +600,4 @@ footer {
         margin: 0 10px;
     }
 }
+
